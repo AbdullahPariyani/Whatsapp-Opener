@@ -26,14 +26,14 @@
     </head>
     <body>
         <div class="container mt-5">
-            <h4>Open WhatsApp without saving a number</h4>
+            <h4>Open WhatsApp without saving a number 1</h4>
             <hr />
             <form id="whatsappForm">
                 <div class="mb-3">
                     <label for="phoneNumber" class="form-label">Phone Number:</label>
                     <input type="text" class="form-control" id="phoneNumber"
                         placeholder="Enter phone number"
-                        oninput="removeWhiteSpace()">
+                        oninput="removeWhiteSpace()" value="+966">
                 </div>
                 <button type="button" class="btn btn-primary whatsapp-color"
                     onclick="openWhatsApp()">
@@ -53,12 +53,9 @@
         }
 
         function openWhatsApp() {
-            var phoneNumber = document.getElementById("phoneNumber").value;
-            var countryCode = prompt("Enter country code (e.g., +966):");
-            if (countryCode) {
-                var contactString = countryCode + phoneNumber;
-                window.open("https://wa.me/+" + contactString);
-            }
+            var contactString = document.getElementById("phoneNumber").value;
+                window.open("https://wa.me/" + contactString);
+            
         }
     </script>
     </body>
